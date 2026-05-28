@@ -1,6 +1,3 @@
-from mox_helpers.payloads import lora_klasse
-
-
 def create_org_unit(department, name, org, unit_type, from_date):
     payload = {
         "uuid": department["DepartmentUUIDIdentifier"],
@@ -136,27 +133,3 @@ def edit_klasse_title(titel):
         }
     }
     return payload
-
-
-def profession(profession, org, job_function_facet):
-    klasse = lora_klasse(
-        bvn=profession,
-        title=profession,
-        facet_uuid=job_function_facet,
-        org_uuid=org,
-        scope="TEXT",
-        dato="1930-01-01",
-    )
-    return klasse
-
-
-def engagement_type(engagement_type_ref, job_position_id, org, engagement_type_facet):
-    klasse = lora_klasse(
-        bvn=engagement_type_ref,
-        title=job_position_id,
-        facet_uuid=engagement_type_facet,
-        org_uuid=org,
-        scope="TEXT",
-        dato="1930-01-01",
-    )
-    return klasse
