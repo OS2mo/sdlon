@@ -114,22 +114,3 @@ def connect_it_system_to_user(username, it_system, person_uuid):
         "validity": {"from": "1930-01-01", "to": None},
     }
     return payload
-
-
-def edit_klasse_title(titel):
-    payload = {
-        "attributter": {
-            "klasseegenskaber": [
-                {
-                    "titel": titel,
-                    "virkning": {
-                        "from": "1930-01-01",
-                        "to": "infinity",
-                        "aktoerref": "ddc99abd-c1b0-48c2-aef7-74fea841adae",
-                        "aktoertypekode": "Bruger",
-                    },
-                }
-            ]
-        }
-    }
-    return payload
