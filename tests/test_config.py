@@ -53,7 +53,6 @@ DEFAULT_EXPECTED_SETTINGS: Dict[str, Any] = {
         "log_format": "%(levelname)s %(asctime)s %(filename)s:%(lineno)d:%(name)s: %(message)s",  # noqa
         "log_level": "ERROR",
         "mora_base": "http://mo:5000",
-        "sentry_dsn": None,
     },
 }
 

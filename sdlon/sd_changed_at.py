@@ -21,7 +21,6 @@ from zoneinfo import ZoneInfo
 
 import click
 import requests
-import sentry_sdk
 from fastapi.encoders import jsonable_encoder
 from gql import gql
 from integrations.ad_integration import ad_reader
@@ -1591,10 +1590,6 @@ def changed_at(
         )
         raise PreviousRunNotCompletedError()
     sd_changed_at_state.state(RunDBState.RUNNING.value)
-
-    # TODO: Sentry not working... fix settings.job_settings.sentry_dsn below
-    if settings.job_settings.sentry_dsn:
-        sentry_sdk.init(dsn=settings.job_settings.sentry_dsn)
 
     from_date = get_run_db_from_date()
     to_date = datetime.datetime.now(tz=ZoneInfo("Europe/Copenhagen"))
